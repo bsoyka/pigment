@@ -1,8 +1,7 @@
-from pathlib import Path
-
 import setuptools
 
-long_description = (Path(__file__).parent / "README.md").read_text()
+with open("README.md") as file:
+    long_description = file.read()
 
 setuptools.setup(
     name="pigment",
@@ -12,17 +11,23 @@ setuptools.setup(
     description="Python utilities for colors",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/bsoyka/pigment",
+    url="https://pigment.readthedocs.io/",
     packages=setuptools.find_packages(),
     classifiers=[
-        "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     project_urls={
-        "Documentation": "https://pigment.readthedocs.io/",
+        "Source": "https://github.com/bsoyka/pigment",
         "Changelog": "https://github.com/bsoyka/pigment/releases",
     },
-    install_requires=["averager==2.0.0"]
+    install_requires=["averager==2.0.0"],
 )
