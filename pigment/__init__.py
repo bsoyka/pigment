@@ -6,6 +6,7 @@ from colorsys import hls_to_rgb, hsv_to_rgb, rgb_to_hls, rgb_to_hsv
 from math import sqrt
 
 from .exceptions import InvalidRGBValue, WrongLengthError
+from .vars import CSS_COLORS
 
 
 def normalize_hex(hex_code: str) -> str:
@@ -172,6 +173,19 @@ class Color:
             round(255 * (1 - magenta / 100) * (1 - key / 100)),
             round(255 * (1 - yellow / 100) * (1 - key / 100)),
         )
+
+    @classmethod
+    def from_css_name(cls, css_color):
+        """Gets a color from a CSS color name
+
+        Args:
+            css_color (:class:`str`): The name of the CSS color
+
+        Returns:
+            :class:`~pigment.Color`
+        """
+
+        return Color(*CSS_COLORS[css_color])
 
 
 def blend(color1: Color, color2: Color) -> Color:
