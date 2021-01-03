@@ -11,6 +11,7 @@ setuptools.setup(
     author_email="bensoyka@icloud.com",
     description="Python utilities for colors",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     url="https://github.com/bsoyka/pigment",
     packages=setuptools.find_packages(),
     classifiers=[

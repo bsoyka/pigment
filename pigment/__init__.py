@@ -82,7 +82,9 @@ class Color:
 
     @hex_code.setter
     def hex_code(self, value):
-        self.rgb = (int(normalize_hex(value)[i : i + 2], 16) for i in (0, 2, 4))
+        self.rgb = tuple(
+            int(normalize_hex(value)[i : i + 2], 16) for i in (0, 2, 4)
+        )
 
     @property
     def hsv(self):
@@ -105,7 +107,10 @@ class Color:
 
     @hsv.setter
     def hsv(self, value):
-        self.rgb = hsv_to_rgb(*value)
+        self.rgb = tuple(
+            round(x * 255)
+            for x in hsv_to_rgb(value[0] / 360, value[1] / 100, value[2] / 100)
+        )
 
     @property
     def hls(self):
@@ -128,7 +133,10 @@ class Color:
 
     @hls.setter
     def hls(self, value):
-        self.rgb = hls_to_rgb(*value)
+        self.rgb = tuple(
+            round(x * 255)
+            for x in hls_to_rgb(value[0] / 360, value[1] / 100, value[2] / 100)
+        )
 
     @property
     def cmyk(self):
