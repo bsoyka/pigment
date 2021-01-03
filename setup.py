@@ -6,7 +6,7 @@ long_description = (Path(__file__).parent / "README.md").read_text()
 
 setuptools.setup(
     name="pigment",
-    version="0.2.0",
+    version="0.2.1",
     author="Ben Soyka",
     author_email="bensoyka@icloud.com",
     description="Python utilities for colors",
