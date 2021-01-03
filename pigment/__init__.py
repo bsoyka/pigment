@@ -1,6 +1,6 @@
 """Python utilities for colors"""
 
-__version__ = "0.1.1"
+__version__ = "0.2.0"
 
 from colorsys import hls_to_rgb, hsv_to_rgb, rgb_to_hls, rgb_to_hsv
 from math import sqrt
