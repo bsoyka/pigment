@@ -13,3 +13,6 @@ def test_updating_1():
 
     c.hsv = (0, 100, 100)
     assert c.rgb == (255, 0, 0)
+
+    c.hue = 60
+    assert c.rgb == (255, 255, 0)

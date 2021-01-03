@@ -114,6 +114,16 @@ class Color:
         )
 
     @property
+    def hue(self):
+        """The color's hue (0-360)"""
+
+        return self.hsv[0]
+
+    @hue.setter
+    def hue(self, value):
+        self.hsv = (value, *self.hsv[1:])
+
+    @property
     def hls(self):
         """The color as an HLS tuple
 

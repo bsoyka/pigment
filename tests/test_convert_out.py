@@ -62,3 +62,17 @@ def test_rgb_to_hsv(color, expected):
 )
 def test_rgb_to_hls(color, expected):
     assert color.hls == expected
+
+
+@mark.parametrize(
+    "color,expected",
+    [
+        (BLACK, 0),
+        (WHITE, 0),
+        (RED, 0),
+        (GREEN, 120),
+        (BLUE, 240),
+    ],
+)
+def test_rgb_to_hue(color, expected):
+    assert color.hue == expected
