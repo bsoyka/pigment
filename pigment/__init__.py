@@ -5,6 +5,8 @@ __version__ = "0.2.0"
 from colorsys import hls_to_rgb, hsv_to_rgb, rgb_to_hls, rgb_to_hsv
 from math import sqrt
 
+from averager import average
+
 from .exceptions import InvalidRGBValue, WrongLengthError
 from .vars import CSS_COLORS
 
@@ -209,8 +211,6 @@ def blend(color1: Color, color2: Color) -> Color:
         :class:`~pigment.Color`
     """
 
-    return Color(
-        round(sqrt((color1[0] ** 2 + color2[0] ** 2) / 2)),
-        round(sqrt((color1[1] ** 2 + color2[1] ** 2) / 2)),
-        round(sqrt((color1[2] ** 2 + color2[2] ** 2) / 2)),
-    )
+    colors = (color1.rgb, color2.rgb)
+
+    return Color(*(round(average([c[i] for c in colors])) for i in range(3)))

@@ -24,4 +24,5 @@ setuptools.setup(
         "Documentation": "https://pigment.readthedocs.io/",
         "Changelog": "https://github.com/bsoyka/pigment/releases",
     },
+    install_requires=["averager==2.0.0"]
 )
