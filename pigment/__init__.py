@@ -55,6 +55,12 @@ class Color:
     def __init__(self, red: int, green: int, blue: int):
         self.rgb = (red, green, blue)
 
+    def __eq__(self, other):
+        if isinstance(other, Color):
+            return self.rgb == other.rgb
+
+        return self.rgb == other
+
     @property
     def rgb(self):
         """The color as an RGB tuple
