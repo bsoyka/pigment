@@ -222,4 +222,6 @@ def blend(color1: Color, color2: Color) -> Color:
 
     colors = (color1.rgb, color2.rgb)
 
-    return Color(*(round(average([c[i] for c in colors])) for i in range(3)))
+    return Color(
+        *(round(sqrt(average([c[i] ** 2 for c in colors]))) for i in range(3))
+    )
