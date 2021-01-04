@@ -5,7 +5,7 @@ with open("README.md") as file:
 
 setuptools.setup(
     name="pigment",
-    version="0.2.1",
+    version="0.3.0",
     author="Ben Soyka",
     author_email="bensoyka@icloud.com",
     description="Python utilities for colors",
