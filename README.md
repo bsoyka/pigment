@@ -9,7 +9,8 @@
 (300, 100, 50)
 ```
 
-[![Downloads](https://pepy.tech/badge/pigment)](https://pepy.tech/project/pigment)
+[![Downloads](https://pepy.tech/badge/pigment)](https://pepy.tech/project/pigment)[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbsoyka%2Fpigment.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbsoyka%2Fpigment?ref=badge_shield)
+
 [![Supported Versions](https://img.shields.io/pypi/pyversions/pigment.svg)](https://pypi.org/project/pigment)
 [![Testing](https://img.shields.io/github/workflow/status/bsoyka/pigment/Testing%20with%20pytest?label=tests)](https://github.com/bsoyka/pigment/actions?query=workflow%3A%22Testing+with+pytest%22)
 [![License](https://img.shields.io/pypi/l/pigment)](https://github.com/bsoyka/pigment/blob/master/LICENSE)
@@ -28,3 +29,7 @@ Pigment officially supports Python 3.7+.
 ## API Reference
 
 See [Read the Docs](https://pigment.readthedocs.io) for Pigment's documentation.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbsoyka%2Fpigment.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbsoyka%2Fpigment?ref=badge_large)
