@@ -55,6 +55,9 @@ class Color:
     def __init__(self, red: int, green: int, blue: int):
         self.rgb = (red, green, blue)
 
+    def __repr__(self):
+        return "<pigment.Color r=%r g=%r b=%r>" % self.rgb
+
     def __eq__(self, other):
         if isinstance(other, Color):
             return self.rgb == other.rgb
