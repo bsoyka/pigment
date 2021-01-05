@@ -35,7 +35,7 @@ Pigment is available on PyPI:
 
     $ python -m pip install pigment
 
-Pigment officially supports Python 3.7+.
+Pigment officially supports Python 3.5+.
 
 Documentation Contents
 ----------------------
