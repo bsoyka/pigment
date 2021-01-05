@@ -4,6 +4,7 @@ __version__ = "0.3.0"
 
 from colorsys import hls_to_rgb, hsv_to_rgb, rgb_to_hls, rgb_to_hsv
 from math import sqrt
+from random import randint
 
 from averager import average
 
@@ -207,6 +208,31 @@ class Color:
         """
 
         return Color(*CSS_COLORS[css_color])
+
+    @classmethod
+    def random(
+        cls,
+        red: tuple = (0, 255),
+        green: tuple = (0, 255),
+        blue: tuple = (0, 255),
+    ):
+        """Generates a random color
+
+        This works by generating random red, green, and blue values using
+        :func:`random.randint` from the standard library using the min/max
+        values specified if any
+
+        Args:
+            red (:class:`tuple`): The two arguments to pass for the red value
+            green (:class:`tuple`): The two arguments to pass for the green
+                value
+            blue (:class:`tuple`): The two arguments to pass for the blue value
+
+        Returns:
+            :class:`~pigment.Color`
+        """
+
+        return Color(randint(*red), randint(*green), randint(*blue))
 
 
 def blend(color1: Color, color2: Color) -> Color:
