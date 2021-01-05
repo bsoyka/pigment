@@ -196,7 +196,7 @@ class Color:
         )
 
     @classmethod
-    def from_css_name(cls, css_color):
+    def from_css_name(cls, css_color: str):
         """Gets a color from a CSS color name
 
         Args:
