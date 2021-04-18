@@ -1,10 +1,10 @@
 from pytest import mark
 
-from pigment import Color, blend
+from pigment import Color, blend  # pylint: disable=import-error
 
 
 @mark.parametrize(
-    "color1,color2,expected",
+    'color1,color2,expected',
     [
         (Color(255, 0, 0), Color(0, 255, 0), Color(180, 180, 0)),
         (Color(255, 0, 0), Color(0, 0, 255), Color(180, 0, 180)),

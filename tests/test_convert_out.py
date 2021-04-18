@@ -1,5 +1,6 @@
-from pigment import Color
 from pytest import mark
+
+from pigment import Color  # pylint: disable=import-error
 
 BLACK = Color(0, 0, 0)
 WHITE = Color(255, 255, 255)
@@ -9,13 +10,13 @@ BLUE = Color(0, 0, 255)
 
 
 @mark.parametrize(
-    "color,expected",
+    'color,expected',
     [
-        (BLACK, "000000"),
-        (WHITE, "ffffff"),
-        (RED, "ff0000"),
-        (GREEN, "00ff00"),
-        (BLUE, "0000ff"),
+        (BLACK, '000000'),
+        (WHITE, 'ffffff'),
+        (RED, 'ff0000'),
+        (GREEN, '00ff00'),
+        (BLUE, '0000ff'),
     ],
 )
 def test_rgb_to_hex(color, expected):
@@ -23,7 +24,7 @@ def test_rgb_to_hex(color, expected):
 
 
 @mark.parametrize(
-    "color,expected",
+    'color,expected',
     [
         (BLACK, (0, 0, 0, 100)),
         (WHITE, (0, 0, 0, 0)),
@@ -37,7 +38,7 @@ def test_rgb_to_cmyk(color, expected):
 
 
 @mark.parametrize(
-    "color,expected",
+    'color,expected',
     [
         (BLACK, (0, 0, 0)),
         (WHITE, (0, 0, 100)),
@@ -51,7 +52,7 @@ def test_rgb_to_hsv(color, expected):
 
 
 @mark.parametrize(
-    "color,expected",
+    'color,expected',
     [
         (BLACK, (0, 0, 0)),
         (WHITE, (0, 100, 0)),
@@ -65,7 +66,7 @@ def test_rgb_to_hls(color, expected):
 
 
 @mark.parametrize(
-    "color,expected",
+    'color,expected',
     [
         (BLACK, 0),
         (WHITE, 0),

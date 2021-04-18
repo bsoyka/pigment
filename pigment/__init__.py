@@ -1,6 +1,6 @@
 """Python utilities for colors"""
 
-__version__ = "0.5.0"
+__version__ = '0.5.0'
 
 from colorsys import hls_to_rgb, hsv_to_rgb, rgb_to_hls, rgb_to_hsv
 from math import sqrt
@@ -29,13 +29,13 @@ def normalize_hex(hex_code: str) -> str:
             code had the wrong length
     """
 
-    hex_code = hex_code.lstrip("#").lower()
+    hex_code = hex_code.lstrip('#').lower()
 
     if len(hex_code) == 3:
-        hex_code = "".join(c * 2 for c in hex_code)
+        hex_code = ''.join(c * 2 for c in hex_code)
 
     if len(hex_code) != 6:
-        raise WrongLengthError("hex_code")
+        raise WrongLengthError('hex_code')
 
     return hex_code
 
@@ -57,7 +57,7 @@ class Color:
         self.rgb = (red, green, blue)
 
     def __repr__(self):
-        return "<pigment.Color r=%r g=%r b=%r>" % self.rgb
+        return '<pigment.Color r=%r g=%r b=%r>' % self.rgb
 
     def __eq__(self, other):
         if isinstance(other, Color):
@@ -91,7 +91,7 @@ class Color:
     def hex_code(self):
         """The color's hex code"""
 
-        return "%02x%02x%02x" % (self.rgb[0], self.rgb[1], self.rgb[2])
+        return '%02x%02x%02x' % (self.rgb[0], self.rgb[1], self.rgb[2])
 
     @hex_code.setter
     def hex_code(self, value):

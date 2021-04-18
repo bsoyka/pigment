@@ -16,9 +16,9 @@ class WrongLengthError(PigmentError, ValueError):
 
     def __init__(self, argument: str = None):
         if argument:
-            super().__init__("argument %s has an invalid length" % argument)
+            super().__init__('argument %s has an invalid length' % argument)
         else:
-            super().__init__("argument has an invalid length")
+            super().__init__('argument has an invalid length')
 
 
 class InvalidRGBValue(PigmentError, ValueError):
@@ -29,4 +29,4 @@ class InvalidRGBValue(PigmentError, ValueError):
     """
 
     def __init__(self):
-        super().__init__("invalid RGB value")
+        super().__init__('invalid RGB value')
