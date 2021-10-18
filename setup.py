@@ -31,5 +31,5 @@ setuptools.setup(
         "Source": "https://github.com/bsoyka/pigment",
         "Changelog": "https://github.com/bsoyka/pigment/releases",
     },
-    install_requires=["averager==2.0.1"],
+    install_requires=["averager==3.0.0"],
 )
