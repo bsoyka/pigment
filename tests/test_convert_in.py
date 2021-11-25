@@ -10,13 +10,13 @@ BLUE = Color(0, 0, 255)
 
 
 @mark.parametrize(
-    'expected,hex_code',
+    "expected,hex_code",
     [
-        (BLACK, '000000'),
-        (WHITE, 'ffffff'),
-        (RED, 'ff0000'),
-        (GREEN, '00ff00'),
-        (BLUE, '0000ff'),
+        (BLACK, "000000"),
+        (WHITE, "ffffff"),
+        (RED, "ff0000"),
+        (GREEN, "00ff00"),
+        (BLUE, "0000ff"),
     ],
 )
 def test_hex_to_rgb(expected, hex_code):
@@ -26,7 +26,7 @@ def test_hex_to_rgb(expected, hex_code):
 
 
 @mark.parametrize(
-    'expected,cmyk',
+    "expected,cmyk",
     [
         (BLACK, (0, 0, 0, 100)),
         (WHITE, (0, 0, 0, 0)),
@@ -42,7 +42,7 @@ def test_cmyk_to_rgb(expected, cmyk):
 
 
 @mark.parametrize(
-    'expected,hsv',
+    "expected,hsv",
     [
         (BLACK, (0, 0, 0)),
         (WHITE, (0, 0, 100)),
@@ -58,7 +58,7 @@ def test_hsv_to_rgb(expected, hsv):
 
 
 @mark.parametrize(
-    'expected,hls',
+    "expected,hls",
     [
         (BLACK, (0, 0, 0)),
         (WHITE, (0, 100, 0)),

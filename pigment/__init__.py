@@ -95,7 +95,9 @@ class Color:
 
     @hex_code.setter
     def hex_code(self, value):
-        self.rgb = tuple(int(normalize_hex(value)[i : i + 2], 16) for i in (0, 2, 4))
+        self.rgb = tuple(
+            int(normalize_hex(value)[i : i + 2], 16) for i in (0, 2, 4)
+        )
 
     @property
     def hsv(self):
@@ -106,7 +108,9 @@ class Color:
         * Value: amount of black vs. color (0-100)
         """
 
-        res = rgb_to_hsv(self.rgb[0] / 255, self.rgb[1] / 255, self.rgb[2] / 255)
+        res = rgb_to_hsv(
+            self.rgb[0] / 255, self.rgb[1] / 255, self.rgb[2] / 255
+        )
 
         return (
             round(res[0] * 360),
@@ -140,7 +144,9 @@ class Color:
         * Saturation: amount of gray vs. color (0-100)
         """
 
-        res = rgb_to_hls(self.rgb[0] / 255, self.rgb[1] / 255, self.rgb[2] / 255)
+        res = rgb_to_hls(
+            self.rgb[0] / 255, self.rgb[1] / 255, self.rgb[2] / 255
+        )
 
         return (
             round(res[0] * 360),
@@ -242,4 +248,6 @@ def blend(color1: Color, color2: Color) -> Color:
 
     colors = (color1.rgb, color2.rgb)
 
-    return Color(*(round(sqrt(average([c[i] ** 2 for c in colors]))) for i in range(3)))
+    return Color(
+        *(round(sqrt(average([c[i] ** 2 for c in colors]))) for i in range(3))
+    )
