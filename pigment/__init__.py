@@ -1,7 +1,5 @@
 """Python utilities for colors"""
 
-__version__ = '0.5.0'
-
 from colorsys import hls_to_rgb, hsv_to_rgb, rgb_to_hls, rgb_to_hsv
 from math import sqrt
 from random import randint
@@ -10,6 +8,8 @@ from averager import average
 
 from .exceptions import InvalidRGBValue, WrongLengthError
 from .vars import CSS_COLORS
+
+__version__ = "0.5.0"
 
 
 def normalize_hex(hex_code: str) -> str:
@@ -29,13 +29,13 @@ def normalize_hex(hex_code: str) -> str:
             code had the wrong length
     """
 
-    hex_code = hex_code.lstrip('#').lower()
+    hex_code = hex_code.lstrip("#").lower()
 
     if len(hex_code) == 3:
-        hex_code = ''.join(c * 2 for c in hex_code)
+        hex_code = "".join(c * 2 for c in hex_code)
 
     if len(hex_code) != 6:
-        raise WrongLengthError('hex_code')
+        raise WrongLengthError("hex_code")
 
     return hex_code
 
@@ -57,7 +57,7 @@ class Color:
         self.rgb = (red, green, blue)
 
     def __repr__(self):
-        return '<pigment.Color r=%r g=%r b=%r>' % self.rgb
+        return "<pigment.Color r=%r g=%r b=%r>" % self.rgb
 
     def __eq__(self, other):
         if isinstance(other, Color):
@@ -91,13 +91,11 @@ class Color:
     def hex_code(self):
         """The color's hex code"""
 
-        return '%02x%02x%02x' % (self.rgb[0], self.rgb[1], self.rgb[2])
+        return "%02x%02x%02x" % (self.rgb[0], self.rgb[1], self.rgb[2])
 
     @hex_code.setter
     def hex_code(self, value):
-        self.rgb = tuple(
-            int(normalize_hex(value)[i : i + 2], 16) for i in (0, 2, 4)
-        )
+        self.rgb = tuple(int(normalize_hex(value)[i : i + 2], 16) for i in (0, 2, 4))
 
     @property
     def hsv(self):
@@ -108,9 +106,7 @@ class Color:
         * Value: amount of black vs. color (0-100)
         """
 
-        res = rgb_to_hsv(
-            self.rgb[0] / 255, self.rgb[1] / 255, self.rgb[2] / 255
-        )
+        res = rgb_to_hsv(self.rgb[0] / 255, self.rgb[1] / 255, self.rgb[2] / 255)
 
         return (
             round(res[0] * 360),
@@ -144,9 +140,7 @@ class Color:
         * Saturation: amount of gray vs. color (0-100)
         """
 
-        res = rgb_to_hls(
-            self.rgb[0] / 255, self.rgb[1] / 255, self.rgb[2] / 255
-        )
+        res = rgb_to_hls(self.rgb[0] / 255, self.rgb[1] / 255, self.rgb[2] / 255)
 
         return (
             round(res[0] * 360),
@@ -248,6 +242,4 @@ def blend(color1: Color, color2: Color) -> Color:
 
     colors = (color1.rgb, color2.rgb)
 
-    return Color(
-        *(round(sqrt(average([c[i] ** 2 for c in colors]))) for i in range(3))
-    )
+    return Color(*(round(sqrt(average([c[i] ** 2 for c in colors]))) for i in range(3)))
